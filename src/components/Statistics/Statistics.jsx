@@ -1,17 +1,17 @@
-import data from '../../data/data.json';
+
 import styles from './Statistics.module.css';
 import PropTypes from 'prop-types';
 
-const Statistics = () => {
+const Statistics = ({stats}) => {
     return (
 <section className={styles.statistics}>
   <h2 className={styles.title}>UPLOAD STATS</h2>
 
   <ul className={styles.statList}>
-      {data.map (datum => (
-        <li key={datum.id} className={styles.item}>
-            <span className={styles.label}>{datum.label}</span>
-            <span className={styles.percentage}>{datum.percentage}%</span>
+      {stats.map (stat => (
+        <li key={stat.id} className={styles.item}>
+            <span className={styles.label}>{stat.label}</span>
+            <span className={styles.percentage}>{stat.percentage}%</span>
         </li>
       ))}
    

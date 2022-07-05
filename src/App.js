@@ -6,6 +6,7 @@ import FriendList from './components/Friends/Friendlist.jsx';
 import TransitionHistory from './components/Transaction/TransactionHistory.jsx';
 
 import user from './data/user.json';
+import statisticalData from './data/statistical-data.json';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       avatar = {user.avatar}
       stats = {user.stats}
       />
-     <Statistics/>
+     <Statistics title = 'UPLOAD STATS' stats = {statisticalData}/>
      <FriendList/>
      <TransitionHistory/>
 
