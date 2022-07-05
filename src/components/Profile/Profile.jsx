@@ -1,33 +1,33 @@
-import user from '../../data/user.json';
+
 import styles from './Profile.module.css';
 import PropTypes from 'prop-types';
 
 
-const Profile = () => (
+const Profile = (props) => (
 <div className={styles.profile}>
   <div className={styles.description}>
     <img
-      src={user.avatar}
+      src={props.avatar}
       alt="User avatar"
       className={styles.avatar}
     />
-    <p className={styles.name}>{user.username}</p>
-    <p class="tag">@{user.tag}</p>
-  <p className={styles.location}>{user.location}</p>
+    <p className={styles.name}>{props.username}</p>
+    <p class="tag">@{props.tag}</p>
+  <p className={styles.location}>{props.location}</p>
   </div>
 
   <ul className={styles.stats}>
     <li>
       <span>Followers</span>
-      <span>{user.stats.followers}</span>
+      <span>{props.stats.followers}</span>
     </li>
     <li>
       <span>Views</span>
-      <span>{user.stats.views}</span>
+      <span>{props.stats.views}</span>
     </li>
     <li>
       <span>Likes</span>
-      <span>{user.stats.likes}</span>
+      <span>{props.stats.likes}</span>
     </li>
   </ul>
 </div>
@@ -39,7 +39,12 @@ Profile.propTypes = {
   tag: PropTypes.string,
   location: PropTypes.string,
   avatar: PropTypes.string,
-  stats: PropTypes.object,
+  stats: PropTypes.object = {
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number
+  },
 };
+
 
 export default Profile;
