@@ -1,8 +1,8 @@
-import items from '../../data/transactions.json';
+
 import styles from './TransactionHistory.module.css';
 import PropTypes from 'prop-types';
 
-const TransactionHistory = () => {
+const TransactionHistory = ({items}) => {
     return (
         <table className={styles.transactionHistory}>
         <thead>

@@ -3,11 +3,12 @@ import './App.css';
 import Profile from  './components/Profile/Profile';
 import Statistics from  './components/Statistics/Statistics.jsx';
 import FriendList from 'components/FriendList/FriendList.jsx';
-import TransitionHistory from './components/Transaction/TransactionHistory.jsx';
+import TransactionHistory from './components/Transaction/TransactionHistory.jsx';
 
 import user from './data/user.json';
 import statisticalData from './data/statistical-data.json';
 import friends from './data/friends.json';
+import transactions from './data/transactions.json';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       />
      <Statistics title = 'UPLOAD STATS' stats = {statisticalData}/>
      <FriendList friends={friends}/>
-     <TransitionHistory/>
+     <TransactionHistory items={transactions}/>
 
     </div>
   );
