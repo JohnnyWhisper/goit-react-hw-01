@@ -2,10 +2,11 @@
 import styles from './Statistics.module.css';
 import PropTypes from 'prop-types';
 
-const Statistics = ({stats}) => {
+const Statistics = ({title, stats}) => {
     return (
 <section className={styles.statistics}>
-  <h2 className={styles.title}>UPLOAD STATS</h2>
+
+{title && <h2 className={styles.title}>{title}</h2>}
 
   <ul className={styles.statList}>
       {stats.map (stat => (
@@ -26,8 +27,8 @@ const Statistics = ({stats}) => {
       stats: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.string.isRequired,
-          label: PropTypes.string,
-          percentage: PropTypes.number,
+          label: PropTypes.string.isRequired,
+          percentage: PropTypes.number.isRequired,
         }),
       ),
     };
